@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Rock-Paper-Scissors</title>
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- Load MobileNet -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <!-- Load KNN Classifier -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+
+    <script src="tf.js"></script>
+    <link href="tf.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <h3 class="title" id="title">Rock Paper Scissor Game</h3>
+    <div class="webcam-container">
+        <video autoplay playsinline height="300" width="350" muted class="webcam" id="webcam"></video>
+    </div>
+    <div class="card spread">
+        <fieldset>
+            <legend class="legend">Train</legend>
+            <button class="baction" id="train-rock-button">Rock</button>
+            <span id="train-rock-span">0 Samples</span>
+            <button class="baction" id="train-paper-button">Paper</button>
+            <span id="train-paper-span">0 Samples</span>
+            <button class="baction" id="train-scissor-button">Scissor</button>
+            <span id="train-scissor-span">0 Samples</span>
+        </fieldset>
+
+    </div>
+    <div style="display: flex; justify-content: center; padding-top: 15px;">
+        <button class="baction" id="start-game-button" disabled>Start game</button>
+    </div>
+    <div id="train-hint" style="display: flex; justify-content: center;">
+        <span id="game-status">Train your gestures above then start a game!</span>
+    </div>
+    <div class="game-area">
+        <div id="computer-image">
+            <img id="c-image" class="rps" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png">
+        </div>
+        <div id="user-image" class="rotated">
+            <img id="u-image" class="rps" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png">
+        </div>
+    </div>
+    <div id="game-result" class="game-result"></div>
+</body>
+
+</html>
